@@ -4,7 +4,7 @@ This PowerShell script automatically renames a Windows computer based on its BIO
 
 ## Features
 - Retrieves the BIOS serial number
-- Sets the computer name to `M365` plus the last 7 characters of the serial number (max 15 chars)
+- Sets the computer name to `LPT` plus the last 7 characters of the serial number (max 15 chars)
 - Handles errors if the serial number cannot be retrieved
 - Ensures the new name is valid for Windows
 
@@ -12,7 +12,7 @@ This PowerShell script automatically renames a Windows computer based on its BIO
 1. Open PowerShell **as Administrator**.
 2. Run the script:
    ```powershell
-   .\rename-computer.ps1
+   .\rename-computer_v1.2.ps1
    ```
 3. The computer will be renamed as described above.
 4. **Restart** the computer to apply the new name.

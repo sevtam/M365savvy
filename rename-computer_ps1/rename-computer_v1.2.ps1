@@ -24,12 +24,12 @@
 # How to Use:
 # 1. Open PowerShell as Administrator.
 # 2. Run this script: .\rename-computer.ps1
-# 3. The computer will be renamed to 'M365' plus the last 7 characters of the BIOS serial number (max 15 chars).
+# 3. The computer will be renamed to 'LPT' plus the last 7 characters of the BIOS serial number (max 15 chars).
 # 4. Restart the computer to apply the new name.
 #
 $serialNumber = (Get-CimInstance -ClassName Win32_BIOS | Select-Object -ExpandProperty SerialNumber)
 
-$hostname = "M365" + $serialNumber.Substring($serialNumber.Length - 7)
+$hostname = "LPT" + $serialNumber.Substring($serialNumber.Length - 7)
 
 # Check if serial number was retrieved
 if ([string]::IsNullOrWhiteSpace($serialNumber)) {
@@ -39,9 +39,9 @@ if ([string]::IsNullOrWhiteSpace($serialNumber)) {
 
 # Build hostname using last 7 characters of serial number (if available)
 if ($serialNumber.Length -ge 7) {
-	$hostname = "M365" + $serialNumber.Substring($serialNumber.Length - 7)
+	$hostname = "LPT" + $serialNumber.Substring($serialNumber.Length - 7)
 } else {
-	$hostname = "M365" + $serialNumber
+	$hostname = "LPT" + $serialNumber
 }
 
 # Ensure hostname does not exceed 15 characters
