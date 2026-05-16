@@ -9,6 +9,14 @@
 # 2. Run this script: .\rename-computer.ps1
 # 3. The computer will be renamed to 'LPT' plus the last 7 characters of the BIOS serial number (max 15 chars).
 # 4. Restart the computer to apply the new name.
+#
+# ---
+# Customization:
+# To change the computer name prefix, edit the lines with "LPT" below.
+# For example, replace "LPT" with your desired prefix:
+#     $hostname = "YOURPREFIX" + $serialNumber.Substring($serialNumber.Length - 7)
+# Remember: the new computer name (prefix + serial number part) cannot exceed 15 characters.
+# ---
 
 $serialNumber = (Get-CimInstance -ClassName Win32_BIOS | Select-Object -ExpandProperty SerialNumber)
 
@@ -34,3 +42,4 @@ if ($hostname.Length -gt 15) {
 
 # Rename the computer
 Rename-Computer -NewName $hostname -Force > $null
+
