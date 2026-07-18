@@ -78,15 +78,7 @@ If your file does not come from the Microsoft readiness assessment workflow, som
 For full walkthrough instructions, see:
 
 - [HOW_TO_USE.md](HOW_TO_USE.md)
-- [PUBLISHING_GUIDE.md](PUBLISHING_GUIDE.md)
 
-## Publishing This Repo
-
-Before pushing publicly:
-
-1. Remove any tenant-sensitive sample files if needed.
-2. Confirm your chosen license in [LICENSE](LICENSE).
-3. Verify `.gitignore` matches what you want excluded.
 
 ## License
 
